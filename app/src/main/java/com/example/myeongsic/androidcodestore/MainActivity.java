@@ -6,6 +6,7 @@ import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.AppCompatButton;
 import android.view.View;
 
+import com.example.myeongsic.androidcodestore.alertdialog.AlertDialogActivity;
 import com.example.myeongsic.androidcodestore.gallery.GalleryActivity;
 import com.example.myeongsic.androidcodestore.permission.PermssionActivity;
 
@@ -20,6 +21,8 @@ public class MainActivity extends AppCompatActivity {
     AppCompatButton requestPermssion;
     @BindView(R.id.getPathFromGallery)
     AppCompatButton getPathFromGallery;
+    @BindView(R.id.getAlertDailogActivity)
+    AppCompatButton getAlertDailogActivity;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -29,7 +32,7 @@ public class MainActivity extends AppCompatActivity {
     }
 
 
-    @OnClick({R.id.requestPermssion, R.id.getPathFromGallery})
+    @OnClick({R.id.requestPermssion, R.id.getPathFromGallery, R.id.getAlertDailogActivity})
     public void onClick(View view) {
         switch (view.getId()) {
             case R.id.requestPermssion:
@@ -37,6 +40,9 @@ public class MainActivity extends AppCompatActivity {
                 break;
             case R.id.getPathFromGallery:
                 startActivity(new Intent(this, GalleryActivity.class));
+                break;
+            case R.id.getAlertDailogActivity:
+                startActivity(new Intent(this, AlertDialogActivity.class));
                 break;
         }
     }

@@ -24,6 +24,7 @@ public class GalleryActivity extends AppCompatActivity {
         intent.setType("image/*");
         // 3. start activity
         startActivityForResult(intent, 0);
+
     }
     @Override
     protected void onActivityResult(int reqCode, int resCode, Intent data) {
