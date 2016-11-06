@@ -21,9 +21,10 @@ public class GalleryActivity extends AppCompatActivity {
         // 1. on Upload click call ACTION_GET_CONTENT intent
         Intent intent = new Intent(Intent.ACTION_GET_CONTENT);
         // 2. pick image only
-        intent.setType("image/*");
+        intent.setType("*/*"); //image/* 이미지만 사용, file/* : 파일 사용
         // 3. start activity
         startActivityForResult(intent, 0);
+
 
     }
     @Override
