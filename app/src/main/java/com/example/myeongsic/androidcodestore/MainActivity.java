@@ -8,6 +8,7 @@ import android.view.View;
 
 import com.example.myeongsic.androidcodestore.alertdialog.AlertDialogActivity;
 import com.example.myeongsic.androidcodestore.gallery.GalleryActivity;
+import com.example.myeongsic.androidcodestore.incoming.IncomingActivity;
 import com.example.myeongsic.androidcodestore.permission.PermssionActivity;
 
 import butterknife.BindView;
@@ -23,6 +24,8 @@ public class MainActivity extends AppCompatActivity {
     AppCompatButton getPathFromGallery;
     @BindView(R.id.getAlertDailogActivity)
     AppCompatButton getAlertDailogActivity;
+    @BindView(R.id.getIncomingService)
+    AppCompatButton getIncomingService;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -32,7 +35,7 @@ public class MainActivity extends AppCompatActivity {
     }
 
 
-    @OnClick({R.id.requestPermssion, R.id.getPathFromGallery, R.id.getAlertDailogActivity})
+    @OnClick({R.id.requestPermssion, R.id.getPathFromGallery, R.id.getAlertDailogActivity,R.id.getIncomingService})
     public void onClick(View view) {
         switch (view.getId()) {
             case R.id.requestPermssion:
@@ -43,6 +46,9 @@ public class MainActivity extends AppCompatActivity {
                 break;
             case R.id.getAlertDailogActivity:
                 startActivity(new Intent(this, AlertDialogActivity.class));
+                break;
+            case R.id.getIncomingService:
+                startActivity(new Intent(this, IncomingActivity.class));
                 break;
         }
     }

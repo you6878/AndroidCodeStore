@@ -6,6 +6,10 @@
     <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
     <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
 
+    <!--IncomingActivitiy-->
+    <uses-permission android:name="android.permission.READ_PHONE_STATE" />
+    <uses-permission android:name="android.permission.SYSTEM_ALERT_WINDOW"/>
+
     <application
         android:allowBackup="true"
         android:icon="@mipmap/ic_launcher"
@@ -21,7 +25,20 @@
         </activity>
         <activity android:name=".gallery.GalleryActivity" />
         <activity android:name=".permission.PermssionActivity" />
-        <activity android:name=".alertdialog.AlertDialogActivity"></activity>
+        <activity android:name=".alertdialog.AlertDialogActivity" />
+        <activity android:name=".incoming.IncomingActivity"></activity>
+
+        <!-- 전화 팝업 -->
+        <!-- 전화 팝업 -->
+        <service android:name=".incoming.CallingService" />
+
+        <receiver android:name=".incoming.IncomingCallBroadcastReceiver">
+            <intent-filter>
+                <action android:name="android.intent.action.PHONE_STATE" />
+            </intent-filter>
+        </receiver>
+
+
     </application>
 
 </manifest>
