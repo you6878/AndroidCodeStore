@@ -26,9 +26,7 @@ public class IncomingCallBroadcastReceiver extends BroadcastReceiver{
         } else { //불러오는부분
             mLastState = state;
             if (TelephonyManager.EXTRA_STATE_RINGING.equals(state)) {
-                String incomingNumber = intent.getStringExtra(TelephonyManager.EXTRA_INCOMING_NUMBER); //번호가져오기
                 Intent serviceIntent = new Intent(context, CallingService.class);
-                serviceIntent.putExtra(CallingService.EXTRA_CALL_NUMBER, incomingNumber);
                 context.startService(serviceIntent);
             }
         }
@@ -36,3 +34,9 @@ public class IncomingCallBroadcastReceiver extends BroadcastReceiver{
 
 
 }
+
+
+/*
+*  String incomingNumber = intent.getStringExtra(TelephonyManager.EXTRA_INCOMING_NUMBER); //번호가져오기
+*
+* */
