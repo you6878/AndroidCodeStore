@@ -15,6 +15,7 @@ public class IncomingCallBroadcastReceiver extends BroadcastReceiver{
     private static final String TAG = "IncomingCall";
     private static String mLastState;
 
+
     @Override
     public void onReceive(Context context, Intent intent) {
         String state = intent.getStringExtra(TelephonyManager.EXTRA_STATE);
@@ -22,6 +23,8 @@ public class IncomingCallBroadcastReceiver extends BroadcastReceiver{
         if(state.equals(TelephonyManager.EXTRA_STATE_IDLE))
         {
             Log.d(TAG,"통화 종료 후 구현 ...");
+            Intent serviceIntent = new Intent(context, CallingService.class);
+            context.stopService(serviceIntent);
         }
         else if(state.equals(TelephonyManager.EXTRA_STATE_RINGING))
         {
