@@ -6,16 +6,17 @@
     <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
     <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
 
-    <!--IncomingActivitiy-->
+    <!-- IncomingActivitiy -->
     <uses-permission android:name="android.permission.READ_PHONE_STATE" />
-    <uses-permission android:name="android.permission.SYSTEM_ALERT_WINDOW"/>
+    <uses-permission android:name="android.permission.SYSTEM_ALERT_WINDOW" />
+    <uses-permission android:name="android.permission.INTERNET" />
 
     <application
         android:allowBackup="true"
         android:icon="@mipmap/ic_launcher"
         android:label="@string/app_name"
         android:supportsRtl="true"
-        android:theme="@style/AppTheme">
+        android:theme="@style/AppTheme.NoAcitionBar">
         <activity android:name=".MainActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
@@ -26,7 +27,7 @@
         <activity android:name=".gallery.GalleryActivity" />
         <activity android:name=".permission.PermssionActivity" />
         <activity android:name=".alertdialog.AlertDialogActivity" />
-        <activity android:name=".incoming.IncomingActivity"></activity>
+        <activity android:name=".incoming.IncomingActivity" />
 
         <!-- 전화 팝업 -->
         <!-- 전화 팝업 -->
@@ -38,7 +39,10 @@
             </intent-filter>
         </receiver>
 
-
+        <activity android:name=".pinchtozoom.PinchToZoomActivity" />
+        <activity android:name=".autofit.AutoFitActivity" />
+        <activity android:name=".webview.WebViewActivity" />
+        <activity android:name=".anim.AnimationActivity"></activity>
     </application>
 
 </manifest>

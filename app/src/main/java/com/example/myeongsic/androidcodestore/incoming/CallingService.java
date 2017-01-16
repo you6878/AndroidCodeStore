@@ -26,7 +26,7 @@ public class CallingService extends Service {
     private LinearLayout linearLayout;
     private View mView;
     private WindowManager mManager;
-    private WindowManager.LayoutParams mParams;
+    private WindowManager.LayoutParams mParams; // 사이즈 선언한 부분
 
     private float mTouchX, mTouchY;
     private int mViewX, mViewY;
@@ -50,9 +50,9 @@ public class CallingService extends Service {
 
                 case MotionEvent.ACTION_UP:
                     if (!isMove) {
-                        Toast.makeText(getApplicationContext(), "클릭",
-                                Toast.LENGTH_SHORT).show();
-                    }
+                    Toast.makeText(getApplicationContext(), "클릭",
+                            Toast.LENGTH_SHORT).show();
+                }
 
                     break;
 
@@ -72,7 +72,7 @@ public class CallingService extends Service {
                     mParams.x = mViewX + x;
                     mParams.y = mViewY + y;
 
-                    mManager.updateViewLayout(mView, mParams);
+                    mManager.updateViewLayout(mView, mParams); //드래그 이미지 이동
 
                     break;
             }

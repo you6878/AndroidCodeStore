@@ -33,4 +33,16 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:text="GetIncomingService" />
+
+    <android.support.v7.widget.AppCompatButton
+        android:id="@+id/getWebView"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="getWebView" />
+
+    <android.support.v7.widget.AppCompatButton
+        android:id="@+id/getAnimationIntent"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="getAnimationIntent" />
 </LinearLayout>
